@@ -2,11 +2,11 @@ import { getSortedArticlesData, ArticleData } from "@/lib/articles";
 import Link from "next/link";
 import { BookOpen, Compass, FileText, ArrowUpRight } from "lucide-react";
 
-function CategorySection({ title, icon, articles }: { title: string, icon: React.ReactNode, articles: ArticleData[] }) {
+function CategorySection({ title, icon, articles, id }: { title: string, icon: React.ReactNode, articles: ArticleData[], id?: string }) {
   if (articles.length === 0) return null;
   
   return (
-    <section className="mb-16">
+    <section id={id} className="mb-16">
       <div className="flex items-center gap-3 mb-8 border-b border-slate-200 pb-4">
         {icon}
         <h2 className="text-2xl font-bold text-slate-900 tracking-tight">{title}</h2>
@@ -52,9 +52,9 @@ export default function Home() {
         </p>
       </header>
 
-      <CategorySection title="Playbooks" icon={<BookOpen className="w-6 h-6 text-blue-600" />} articles={playbooks} />
-      <CategorySection title="Tactical Guides" icon={<Compass className="w-6 h-6 text-emerald-600" />} articles={guides} />
-      <CategorySection title="Deep-Dive Articles" icon={<FileText className="w-6 h-6 text-indigo-600" />} articles={pureArticles} />
+      <CategorySection id="playbooks" title="Playbooks" icon={<BookOpen className="w-6 h-6 text-blue-600" />} articles={playbooks} />
+      <CategorySection id="guides" title="Tactical Guides" icon={<Compass className="w-6 h-6 text-emerald-600" />} articles={guides} />
+      <CategorySection id="articles" title="Deep-Dive Articles" icon={<FileText className="w-6 h-6 text-indigo-600" />} articles={pureArticles} />
 
     </div>
   );

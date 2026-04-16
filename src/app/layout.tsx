@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -38,9 +39,9 @@ export default function RootLayout({
               <div>
                 <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Categories</h3>
                 <ul className="space-y-3 text-sm font-medium">
-                  <li><a href="/fourg.dev/#ai" className="hover:text-blue-600 transition-colors text-slate-600">AI Strategy</a></li>
-                  <li><a href="/fourg.dev/#founders" className="hover:text-blue-600 transition-colors text-slate-600">Founder Playbooks</a></li>
-                  <li><a href="/fourg.dev/#brand" className="hover:text-blue-600 transition-colors text-slate-600">Brand Building</a></li>
+                  <li><Link href="/#playbooks" className="hover:text-blue-600 transition-colors text-slate-600">Playbooks</Link></li>
+                  <li><Link href="/#guides" className="hover:text-blue-600 transition-colors text-slate-600">Tactical Guides</Link></li>
+                  <li><Link href="/#articles" className="hover:text-blue-600 transition-colors text-slate-600">Deep-Dive Articles</Link></li>
                 </ul>
               </div>
 
