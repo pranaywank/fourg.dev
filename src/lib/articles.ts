@@ -12,6 +12,7 @@ export interface ArticleData {
   date: string;
   author: string;
   content: string;
+  type?: string;
 }
 
 export function getSortedArticlesData(): ArticleData[] {

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Fourg Resources | Strategic Insights & Playbooks",
@@ -22,43 +25,36 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full">
-      <head>
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="min-h-full antialiased bg-brand-bg text-brand-fg">
+      <body className={`${inter.variable} font-sans min-h-full antialiased bg-brand-bg text-brand-fg`}>
         <div className="flex flex-col md:flex-row min-h-screen">
           {/* Sidebar */}
-          <aside className="w-full md:w-64 lg:w-72 border-r border-white/10 shrink-0 flex flex-col p-6 sticky top-0 md:h-screen overflow-y-auto">
+          <aside className="w-full md:w-64 lg:w-72 border-r border-slate-200 shrink-0 flex flex-col p-6 sticky top-0 md:h-screen overflow-y-auto bg-slate-50">
             <div className="mb-12">
-              <a href="https://fourg.dev" className="text-2xl font-bold tracking-tight">Fourg.dev</a>
-              <p className="text-sm text-gray-400 mt-2">Resources Hub</p>
+              <a href="https://fourg.dev" className="text-2xl font-bold tracking-tight text-slate-900">Fourg.dev</a>
+              <p className="text-sm text-slate-500 mt-2 font-medium">Resources Hub</p>
             </div>
             
             <nav className="flex-1 space-y-8">
               <div>
-                <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Categories</h3>
-                <ul className="space-y-3 text-sm">
-                  <li><a href="/fourg.dev/#ai" className="hover:text-white transition-colors text-gray-300">AI Strategy</a></li>
-                  <li><a href="/fourg.dev/#founders" className="hover:text-white transition-colors text-gray-300">Founder Playbooks</a></li>
-                  <li><a href="/fourg.dev/#brand" className="hover:text-white transition-colors text-gray-300">Brand Building</a></li>
+                <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Categories</h3>
+                <ul className="space-y-3 text-sm font-medium">
+                  <li><a href="/fourg.dev/#ai" className="hover:text-blue-600 transition-colors text-slate-600">AI Strategy</a></li>
+                  <li><a href="/fourg.dev/#founders" className="hover:text-blue-600 transition-colors text-slate-600">Founder Playbooks</a></li>
+                  <li><a href="/fourg.dev/#brand" className="hover:text-blue-600 transition-colors text-slate-600">Brand Building</a></li>
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Links</h3>
-                <ul className="space-y-3 text-sm">
-                  <li><a href="https://fourg.dev" className="hover:text-white transition-colors text-blue-400">Back to Agency →</a></li>
+                <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Links</h3>
+                <ul className="space-y-3 text-sm font-medium">
+                  <li><a href="https://fourg.dev" className="hover:text-blue-600 transition-colors text-blue-500">Back to Fourg →</a></li>
                 </ul>
               </div>
             </nav>
           </aside>
 
           {/* Main Content */}
-          <main className="flex-1 min-w-0">
+          <main className="flex-1 min-w-0 bg-white">
             {children}
           </main>
         </div>

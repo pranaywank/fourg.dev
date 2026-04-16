@@ -2,21 +2,13 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --brand-bg: #050505;
-  --brand-fg: #FAFAFA;
+  --brand-bg: #FFFFFF;
+  --brand-fg: #0F172A;
 }
 
 @theme inline {
   --color-brand-bg: var(--brand-bg);
   --color-brand-fg: var(--brand-fg);
-  --font-clash: "Clash Display", sans-serif;
-  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
-  
-  @keyframes scroll {
-    to {
-      transform: translate(calc(-50% - 0.5rem));
-    }
-  }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -24,12 +16,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #050505;
-  color: #FAFAFA;
-  font-family: "Clash Display", sans-serif;
+  background-color: var(--brand-bg);
+  color: var(--brand-fg);
   -webkit-font-smoothing: antialiased;
 }
 
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #050505; }
-::-webkit-scrollbar-thumb { background: #A3A3A3; border-radius: 2px; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
