@@ -49,15 +49,29 @@ jobs:
         
       - name: Stage for GitHub Pages
         run: |
-          # If basePath is /fourg.dev, 'out' contains 'fourg.dev/'
-          # We need 'index.html' at artifact root so Pages serves it at repo URL
-          # AND we need 'fourg.dev/' folder preserved so basePath assets resolve
-          cp -r out/fourg.dev/. out/
+          echo "Checking build output structure..."
+          ls -R out
+          
+          if [ -d "out/fourg.dev" ]; then
+            echo "Detected nested export. Copying contents to root for discovery..."
+            cp -r out/fourg.dev/. out/
+          else
+            echo "Detected flat export. Creating basePath subfolder for asset resolution..."
+            mkdir staging
+            cp -r out/* staging/
+            mkdir -p out/fourg.dev
+            cp -r staging/* out/fourg.dev/
+            rm -rf staging
+          fi
+          
+          touch out/.nojekyll
+          echo "Final artifact structure:"
+          ls -R out
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out
+          path: ./out/
 
   deploy:
     environment:
