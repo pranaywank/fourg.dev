@@ -47,6 +47,13 @@ jobs:
       - name: Build with Next.js
         run: npm run build
         
+      - name: Stage for GitHub Pages
+        run: |
+          # If basePath is /fourg.dev, 'out' contains 'fourg.dev/'
+          # We need 'index.html' at artifact root so Pages serves it at repo URL
+          # AND we need 'fourg.dev/' folder preserved so basePath assets resolve
+          cp -r out/fourg.dev/. out/
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
