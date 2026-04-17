@@ -1,7 +1,7 @@
 ---
 title: "The Pre-Seed Grind: A Framework for Solopreneurs"
 description: "How to ruthlessly prioritize time, build massive digital leverage, and bypass institutional gatekeepers to reach your first $10k MRR."
-category: "Founder Playbooks"
+category: "Solo Operations"
 date: "2026-04-14"
 author: "Fourg.dev"
 type: "playbook"

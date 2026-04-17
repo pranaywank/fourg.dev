@@ -1,7 +1,7 @@
 ---
 title: "The Complete Guide to TikTok B2B Architecture"
 description: "How early-stage B2B startups and technical founders can engineer high-converting short-form video loops to bypass expensive ad-spend."
-category: "Brand Building"
+category: "Video Strategy"
 date: "2026-04-12"
 author: "Fourg.dev"
 type: "guide"

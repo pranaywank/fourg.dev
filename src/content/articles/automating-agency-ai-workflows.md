@@ -1,7 +1,7 @@
 ---
 title: "The Step-by-Step Guide to Automating Agency AI Workflows"
 description: "How service-based agencies can double their profit margins by replacing manual client deliverables with autonomous LLM pipelines."
-category: "AI Strategy"
+category: "Solo Operations"
 date: "2026-04-11"
 author: "Fourg.dev"
 type: "guide"

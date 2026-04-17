@@ -1,7 +1,7 @@
 ---
 title: "Why Your Startup Landing Page is Leaking Conversions"
 description: "A comprehensive tear-down of the most destructive UX and copywriting mistakes that early-stage startups make on their homepages."
-category: "Founder Playbooks"
+category: "UI/UX Design"
 date: "2026-04-13"
 author: "Fourg.dev"
 type: "playbook"

@@ -1,7 +1,7 @@
 ---
 title: "High-Velocity Product Management: A Framework for Founders"
 description: "How to ruthlessly prioritize features, manage technical debt, and ship software at extreme velocity without overwhelming your engineering team."
-category: "Founder Playbooks"
+category: "Product Management"
 date: "2026-04-09"
 author: "Fourg.dev"
 type: "playbook"

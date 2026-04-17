@@ -1,7 +1,7 @@
 ---
 title: "The Prompt Engineering Guide for Product Managers"
 description: "A masterclass on structuring context, personas, and constraints to drastically accelerate product scoping and documentation."
-category: "AI Strategy"
+category: "AI Integration"
 date: "2026-04-10"
 author: "Fourg.dev"
 type: "guide"

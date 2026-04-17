@@ -1,7 +1,7 @@
 ---
 title: "Replacing MVPs with AI: The Vibe Coder Approach"
 description: "A comprehensive guide on leveraging conversational interfaces and specialized IDEs to bypass traditional Minimum Viable Product engineering."
-category: "AI Strategy"
+category: "Vibe Coding Tactics"
 date: "2026-04-15"
 author: "Fourg.dev"
 type: "playbook"

@@ -1,7 +1,7 @@
 ---
 title: "The Comprehensive AI Strategy Playbook for Non-Technical Founders"
 description: "A 2,000-word tactical deep dive on how to evaluate, select, and seamlessly deploy AI infrastructure without writing a single line of code."
-category: "AI Strategy"
+category: "AI Integration"
 date: "2026-04-16"
 author: "Fourg.dev"
 type: "playbook"
