@@ -81,7 +81,7 @@ export default async function Article({ params }: { params: Promise<{ slug: stri
 
         <footer className="mt-20 pt-10 border-t border-slate-200">
           <div className="bg-slate-50 border border-slate-200 p-8 md:p-12 rounded-3xl text-center">
-            <h3 className="text-2xl font-extrabold mb-4 text-slate-900">Scale Your Startup With Fourg</h3>
+            <h3 className="text-2xl font-extrabold mb-4 text-slate-900">Scale Your Startup With Fourg Product Studio</h3>
             <p className="text-slate-600 mb-8 max-w-lg mx-auto text-lg">
               We help founders build, brand, and scale. Stop building random features and start executing with pure velocity.
             </p>
