@@ -4,6 +4,11 @@ import matter from 'gray-matter';
 
 const articlesDirectory = path.join(process.cwd(), 'src/content/articles');
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 export interface ArticleData {
   slug: string;
   title: string;
@@ -13,6 +18,26 @@ export interface ArticleData {
   author: string;
   content: string;
   type?: string;
+  faq?: FaqItem[];
+}
+
+/**
+ * Parses the "## Frequently Asked Questions" section from markdown content.
+ * Expects ### H3 as question, followed by a paragraph as the answer.
+ */
+function parseFaq(content: string): FaqItem[] {
+  const faqSectionMatch = content.match(/## Frequently Asked Questions.*?([\s\S]*?)(?=\n## |\n---|\s*$)/i);
+  if (!faqSectionMatch) return [];
+
+  const faqSection = faqSectionMatch[1];
+  const questionBlocks = faqSection.split(/\n###\s+/).filter(Boolean);
+
+  return questionBlocks.map((block) => {
+    const lines = block.trim().split('\n').filter(Boolean);
+    const question = lines[0].trim();
+    const answer = lines.slice(1).join(' ').trim();
+    return { question, answer };
+  }).filter((item) => item.question && item.answer);
 }
 
 export function getSortedArticlesData(): ArticleData[] {
@@ -23,11 +48,13 @@ export function getSortedArticlesData(): ArticleData[] {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     const matterResult = matter(fileContents);
+    const faq = parseFaq(matterResult.content);
 
     return {
       slug,
       content: matterResult.content,
-      ...(matterResult.data as Omit<ArticleData, 'slug' | 'content'>),
+      faq: faq.length > 0 ? faq : undefined,
+      ...(matterResult.data as Omit<ArticleData, 'slug' | 'content' | 'faq'>),
     };
   });
 
@@ -56,10 +83,12 @@ export function getArticleData(slug: string): ArticleData {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const matterResult = matter(fileContents);
+  const faq = parseFaq(matterResult.content);
 
   return {
     slug,
     content: matterResult.content,
-    ...(matterResult.data as Omit<ArticleData, 'slug' | 'content'>),
+    faq: faq.length > 0 ? faq : undefined,
+    ...(matterResult.data as Omit<ArticleData, 'slug' | 'content' | 'faq'>),
   };
 }

@@ -7,6 +7,7 @@ import { getSortedArticlesData } from "@/lib/articles";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://pranaywank.github.io/fourg.dev'),
   title: "Fourg Resources | Strategic Insights & Playbooks",
   description: "Explore blogs, guides, and playbooks by Fourg Product Studio on AI strategy, product engineering, and brand building.",
   keywords: ["Fourg", "Resources", "AI Strategy", "Playbooks", "Vibe Coding", "Brand Building"],
@@ -15,10 +16,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fourg Resources",
     description: "Deep-dives into AI strategy, product development, and brand scaling by Fourg Product Studio.",
-    url: "https://fourg.dev",
+    url: "https://pranaywank.github.io/fourg.dev/",
     siteName: "Fourg Product Studio",
     locale: "en_US",
     type: "website",
+  },
+  alternates: {
+    canonical: "https://pranaywank.github.io/fourg.dev/",
   },
   verification: {
     google: "VFi6tNJPaQC_hDrRm2SusLj8utCU_02uEDWKrRbt7Gk",
